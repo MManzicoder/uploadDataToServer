@@ -1,12 +1,12 @@
 import serial
 import requests
-# ser = serial.Serial(port='COM6',
-#                     baudrate=9600,
-#                     parity=serial.PARITY_NONE,
-#                     stopbits=serial.STOPBITS_ONE,
-#                     bytesize=serial.EIGHTBITS,
-#                     timeout=1)
-# ser.flush()
+ser = serial.Serial(port='COM6',
+                    baudrate=9600,
+                    parity=serial.PARITY_NONE,
+                    stopbits=serial.STOPBITS_ONE,
+                    bytesize=serial.EIGHTBITS,
+                    timeout=1)
+ser.flush()
 
 
 def upload_data(filedata):
@@ -31,5 +31,5 @@ if __name__ == '__main__':
  response = upload_data("transactions.txt")
  if(response['message']):
      print(response['message'])
-     # ser.write(response['message'])
+     ser.write(response['message'])
 
